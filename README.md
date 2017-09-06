@@ -54,6 +54,3 @@ describe('Hello world', () => {
   });
 });
 ```
-
-## 3. Lets do it
-- First, inside our `app` folder create a file called `app.component.spec.ts`, 
