@@ -1,9 +1,9 @@
 # Your First Unit Test in Angular
-Congrats!! 🎉🎉🎉 hope you did it well, if not, do not worry do it better next time, code should look like below so far. 
+Congrats!! 🎉🎉🎉 hope you did it well, if didn't, do not worry, do it better next time, `app.component.spec.ts` code should look like below so far. 
 
 ```js
 
-// 2. Create a basic testing structure using what you think it's necesary
+// 1. Create a basic testing structure using what you think it's necesary
 describe('AppComponent', ()=>{
 
 	// 2. declare a boolean variable called truly 
@@ -26,3 +26,8 @@ describe('AppComponent', ()=>{
 ```
 
 ## Challenge #2
+Time to test something real in our app. Don't delete spec what you've done before.
+- create a new instance of `AppComponent` class.
+- import what you believe it's really necesary.
+- Create a string variable called <b>title</b>, make it equal to 'Chuck Norris Jokes'.
+- Create a `spec` to ensure `AppComponent` title varible is equal to title variable you just create.
