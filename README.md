@@ -34,3 +34,4 @@ describe('AppComponent', ()=>{
 ## Challenge #3
 Admit it Challenge #2 was so easy, It could do it my blind grandfather :older_man:
 <br>Come on guys!! let't do it more interesting. :facepunch:
+- Have you figured out there's inline template in `app.component.ts` file ? Nice..! let's separate, move inline template to an external template. <b>Note: </b> do the same process for `joke.component.ts`, it is important keeping the file names just change the extension. e.g: `joke.component.html`
