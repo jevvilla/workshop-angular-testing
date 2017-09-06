@@ -19,5 +19,5 @@ You must be wondering, :thinking: is this the only thing I have to configure? th
 - <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification, `it` function, has been run.
 - <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has been run.
 
-## 2. Lets do it
-- Inside our `app` folder create a file called 
+## 3. Lets do it
+- First, inside our `app` folder create a file called `app.component.spec.ts`, 
