@@ -13,7 +13,7 @@ Within its sintax we'll find some main methods or functions wich are essential f
 
 ## 2. Setup
 In order to test any application feature we need to perform some setup, sometimes we need to create some test objects before test or we need to execute an activity after a test, Jasmine provide us a few functions to perform these activities.
-- beforeAll: This function is called once, <b>before</b> all the specs in `describe` test suite are run.
-- afterAll: This function is called once <b>after</b> all the specs in a test suite are finished.
-- beforeEach: This function is called <b>before each</b> test specification, `it` function, has been run.
-- afterEach: This function is called <b>after each</b> test specification has been run.
+- <b>beforeAll:</b> This function is called once, <i><b>before</b></i> all the specs in `describe` test suite are run.
+- <b>afterAll:</b> This function is called once <i><b>after</b></i> all the specs in a test suite are finished.
+- <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification, `it` function, has been run.
+- <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has been run.
