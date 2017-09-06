@@ -2,7 +2,7 @@
 
 ## Challenge #1
 - First, in our `app` folder, create a file called `app.component.spec.ts`.
-- Based on Setup we talked earleir, let´s code a basic structure of testing inside the file just created.`describe`, `beforeEach`, `afterEach`, `it`, `expect` functions can be used if you consider all or some of them are necessary.
+- Based on Setup we talked earlier, let´s code a basic structure of testing inside the file just created.`describe`, `beforeEach`, `afterEach`, `it`, `expect` functions can be used if you consider all or some of them are necessary.
 - Declare a `boolean` variable called <b>truly<b> and assign `true` to it.
 - Create a `spec` to be sure <b>truly<b> variable certainly evaluates `true`.
 
