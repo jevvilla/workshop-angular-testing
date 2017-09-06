@@ -31,3 +31,5 @@ Time to test something real in our app. Don't delete spec what you've done befor
 - import what you believe it's really necesary.
 - Create a string variable called <b>title</b>, make it equal to 'Chuck Norris Jokes'.
 - Create a `spec` to ensure `AppComponent` title varible is equal to title variable you just create.
+
+<br>You already know how to verify everything it's ok in your code, whether 2 `specs` are success, you're ready to take challenge #3
