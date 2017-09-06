@@ -8,4 +8,5 @@ Within its sintax we'll find some main methods or functions wich are essential f
 
 - Suites-`describe(string, function)` function defines what we call a <i>Test Suite</i>, this function takes a title as `string` and a function as second parameter contaning one or more specs, we can understand `describe` function as a wrapper for our test.  
 - Specs-`it(string, function)` function defines individual <i>Test Spec</i>, `it` function can contain one or more Expectations, and takes `string` as title anf a function that wraps Expectations.
-- Expectations-`expect(string, function)` expression is what we call an Expectation, are assertions that evaluate to true or false
+- Expectations-`expect(actual)` expression is what we call an Expectation, are assertions that evaluate to true or false
+- Matchers-`matcher(expected)` expression is what we call a Matcher. It does a boolean comparison with the expected value passed in vs the actual value passed to the expect function. You can find a complete list [here](https://github.com/JamieMason/Jasmine-Matchers#matchers)
