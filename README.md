@@ -33,3 +33,5 @@ Time to test something real in our app. Don't delete spec what you've done befor
 - Create a `spec` to ensure `AppComponent` title varible is equal to title variable you just create.
 
 <br>You already know how to verify everything it's ok in your code, whether 2 `specs` are success, you're ready to take challenge #3
+
+### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/3#your-first-unit-test-in-angular)
