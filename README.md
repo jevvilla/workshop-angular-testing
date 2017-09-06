@@ -10,4 +10,4 @@ After downloading or cloning the app, you have to install all its dependencies r
 
 ## 2. Run Application
 
-once all depencecies've been installed, its time to run our application, simply run `ng s -o` and after seconds app will be served in `localhost:4200`
+once all depencecies've been installed, its time to run our application, simply open your console in app path and run `ng s -o`, after seconds app will be served in `localhost:4200`
