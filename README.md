@@ -13,7 +13,11 @@ Within its sintax we'll find some main methods or functions wich are essential f
 
 ## 2. Setup
 In order to test any application feature we need to perform some setup, sometimes we need to create some test objects before test or we need to execute an activity after a test, Jasmine provide us a few functions to perform these activities.
+You must be wondering, :thinking: is this the only thing I have to configure? the answer is yes, Angular CLI does the hard work for us. isn't that cool? :sunglasses:
 - <b>beforeAll:</b> This function is called once, <i><b>before</b></i> all the specs in `describe` test suite are run.
 - <b>afterAll:</b> This function is called once <i><b>after</b></i> all the specs in a test suite are finished.
 - <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification, `it` function, has been run.
 - <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has been run.
+
+## 2. Lets do it
+- Inside our `app` folder create a file called 
