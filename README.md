@@ -34,7 +34,7 @@ You must be wondering, :thinking: is this the only thing I have to configure? th
 
 Below there is a fragment of code where we show a basic Setup example to evaluate that `helloWorld()` function actually returns a `'Hello World' string`
 
-```
+```js
 describe('Hello world', () => {
 
   let expected = "";
@@ -53,7 +53,6 @@ describe('Hello world', () => {
         .toEqual(expected);
   });
 });
-
 ```
 
 ## 3. Lets do it
