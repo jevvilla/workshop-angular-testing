@@ -9,3 +9,5 @@
 <br><b>Note: </b> Do not worry about using `TestBed` and rare `imports`, it's just the structure. Piece of cake, right!? :cake: :smirk:
 
 Ensure your snippet of code it's ok, just have to run `ng test` in your terminal, if something goes wrong terminal will respond similar to  `Executed 1 of 1 (1 FAILED) ERROR`, on the other hand everything is ok, response will be similar to  `Executed 1 of 1 SUCCESS`, besides our chrome navigator will shows us a very obvious and clear message.
+
+[### Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/2) 
