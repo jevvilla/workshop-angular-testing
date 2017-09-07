@@ -58,6 +58,7 @@ getting better each time :bowtie: Time to refactor our code again
 - Import `ComponentFixture` from '@angular/core/testing', import `HttpModule` too, Import `JokeComponent` and `JokeService`. Weird, right!? :confused: *(later you will notice why)*
 - Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
 - Change this `let component = new AppComponent();` for this `let component: AppComponent;`.
+- Make declaration, imports and providers inside your async `beforeEach`. It is like creating a mini @ngModule
 - Create a `sync` `beforeEach` right below previous one. Hope you remember how.
 - Inside the second `beforeEach` create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent method*** 
 - Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture componentInstance method*** 
