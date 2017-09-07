@@ -39,7 +39,64 @@ You must be wondering, :thinking: is this the only thing I have to configure? th
 ## 2. TestBed
 So far, you've used pure Jasmine syntax to test an Angular Component as a class, that's not bad, but it is complex when you try to test other Angular features as `Services`, `Dependency Injection`, detect changes on `Components` and much more. That why Angular team decides add a powerful utility called `TestBed` to avoid you get frustrated while trying to test any Angular application.
 
-TestBed is the most important utility you have to consider when you're going to write a test for an Angular app. TestBed allows you to do a bunch of cool stuffs, like create your own `@ngModule` using the `configureTestingModule` `TestBed` method, create `Component` intances, and much more. The `TestBed.configureTestingModule`method takes an object as argument very similar to `@ngModule`, in fact we can use most of the properties of a normal `NgModule`
+TestBed is the most important utility you have to consider when you're going to write a test for an Angular app. TestBed allows you to do a bunch of cool stuffs, like create your own `@ngModule` using the `configureTestingModule` `TestBed` method, create `Component` intances, and much more. The `TestBed.configureTestingModule`method takes an object as argument very similar to `@ngModule`, in fact we can use most of the properties of a normal `NgModule`. Ahh... and this method you have to configure it inside `beforeEach` function. It looks a little bit scary :fearful: but it's really easy actually. Let see an example:
+
+```js
+
+// The TestBed one of the Angular testing utilities and has to be imported.
+import { TestBed } from '@angular/core/testing';
+// Import Components, Services and utilities you need
+
+.
+.
+. 
+.
+// sync beforeEach
+beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ ],
+      declarations: [ ],
+      providers: [ ]
+    }).compileComponents(); // compile template and css
+});
+
+.
+.
+.
+.
+
+```
+
+## 2. Async function 
+As developer, the things you most want to test are `Components`, these `Components` can have inline Templates or external Templates, that is a little problem at moment of testing because when a `Component` has an external template Angular template compiler must read the external files from the file system and this is an asynchronous task, we have to ensure this task ends to be able to create an instance of a `Component`. 
+
+`Async` is also a function of the Angular testing utilities, you can use it for many async tasks in testin, in this case behaves as a wrapper for `beforeEach` parameter, before our `TestBed.configureTestingModule`, let's see what is this about using the same example:
+
+```js
+
+// The async one of the Angular testing utilities and has to be imported.
+import { TestBed, async } from '@angular/core/testing';
+// Import Components, Services and utilities you need
+
+.
+.
+. 
+.
+// sync beforeEach
+beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [ ],
+      declarations: [ ],
+      providers: [ ]
+    }).compileComponents(); // compile template and css
+}));
+
+.
+.
+.
+.
+
+```
 
 
 ## Challenge #3
