@@ -1,34 +1,43 @@
 # Your First Unit Test in Angular
-:cold_sweat: Challenge #3 was tough, I know. :cold_sweat: If you did it, this is how your `app.component.spec.ts` file must look like:
+Well done, you are almost done with `AppComponent` specs. Now your `app.component.spec.ts` file must be similar to this:
 
 ```js
+// 1. Import ComponentFixture, HttpModule, JokeComponent and JokeService
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
-// 1. import TestBed and async utilities
-import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from "./app.component";
+import { JokeComponent } from './joke/joke.component';
+import { JokeService } from './joke.service';
 
-
-describe('AppComponent', ()=>{
-	let component = new AppComponent();
+describe('AppComponent', () => {
+	// 2. create fixture variable typed as ComponentFixture<AppComponent>
+	let fixture: ComponentFixture<AppComponent>;
+	// 3. change component variable and typed as AppComponent
+	let component: AppComponent;
 	let truly: boolean = true;
 
-	// 2. create a function beforeEach using async function as wrapper for its parameter 		
-	beforeEach(async(()=>{
-
-	// 3. use configureTestingModule TestBed Method to make your own @ngModule for testing	
+	// 4. make declaration, imports and providers inside your async beforeEach
+	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [],
-			declarations: [],
-			providers: []
+			imports: [HttpModule],
+			declarations: [AppComponent, JokeComponent],
+			providers: [JokeService]
 		}).compileComponents();
 	}));
 
-	it('should evaluate truly variable to return true', ()=>{
+	// 5. Create a sync beforeEach, and make the appropriate configuration inside it
+	beforeEach(() => {
+		fixture = TestBed.createComponent(AppComponent);
+		component = fixture.componentInstance;
+	});
+
+	it('should evaluate truly variable to return true', () => {
 		// expect(truly).toBeTruthy();
 		expect(truly).toBe(true);
 	});
 
-	it('should have as title "Chuck Norris Jokes"', ()=>{
+	it('should have as title "Chuck Norris Jokes"', () => {
 		expect(component.title).toEqual('Chuck Norris Jokes');
 	});
 })
