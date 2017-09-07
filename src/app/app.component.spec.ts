@@ -1,14 +1,16 @@
-// 1. import what you think it's necesary
+// 1. import TestBed and async utilities
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from "./app.component";
 
 
 describe('AppComponent', ()=>{
-	// 2. declare a new instance of AppComponent class 	
 	let component = new AppComponent();
 	let truly: boolean = true;
 
+	// 2. create a function beforeEach using async function as wrapper for its parameter 		
 	beforeEach(async(()=>{
+
+	// 3. use configureTestingModule TestBed Method to make your own @ngModule for testing	
 		TestBed.configureTestingModule({
 			imports: [],
 			declarations: [],
@@ -21,7 +23,6 @@ describe('AppComponent', ()=>{
 		expect(truly).toBe(true);
 	});
 
-	// 3. spec to evaluate title of AppComponent class
 	it('should have as title "Chuck Norris Jokes"', ()=>{
 		expect(component.title).toEqual('Chuck Norris Jokes');
 	});
