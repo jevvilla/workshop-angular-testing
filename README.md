@@ -110,6 +110,6 @@ You have to admit it, Challenge #2 was so easy that even my blind grandfather co
   - Name it correctly..
   - Reference it in the component..
   - **Note:** Do the same process for `joke.component.ts`, it is important to keep the file names, just change the extension. e.g: `joke.component.html`
-- Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates, to declare components, etc. ***Hint:*** use `async` for `configureTestingModule`
+- Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint:*** use `async` for `configureTestingModule`
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/4#your-first-unit-test-in-angular)
