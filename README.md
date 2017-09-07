@@ -1,5 +1,5 @@
 # Your First Unit Test in Angular
-:cold_sweat: Challenge#3 was tough :cold_sweat: If you did it, this is how your `app.component.spec.ts` file must look like:
+:cold_sweat: Challenge #3 was tough, I know. :cold_sweat: If you did it, this is how your `app.component.spec.ts` file must look like:
 
 ```js
 
@@ -34,87 +34,24 @@ describe('AppComponent', ()=>{
 })
 
 ```
-There are some haighly important concepts you have to learn to knock down :punch: Challenge #3, those concepts are:
+As you already know, you have to learn something new to be able to solve each challenge, let see:
 
-## 1. Setup & Teardown
+## 1. ComponentFixture<T>
 
-In order to test any application feature we need to perform some setup, sometimes we need to create some test objects before test or we need to execute an activity after a test, Jasmine provide us a few functions to perform these activities.
-You must be wondering, :thinking: is this the only thing I have to configure? the answer is yes, Angular CLI does the hard work for us. isn't that cool? :sunglasses:. Those Jasmine functions are:
+Fixture for debugging and testing a component, provides you access to the `component` instance itself, and everything attached to the `component` like `DOM elements`, `dependencies` etc, takes as argument the component class name. e.g `ComponentFixture<AppComponent>` this case.
 
-- <b>beforeAll:</b> This function is called once, <i><b>before</b></i> all the specs in `describe` test suite are run.
-- <b>afterAll:</b> This function is called once <i><b>after</b></i> all the specs in a test suite are finished.
-- <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification, `it` function, has been run.
-- <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has been run.
+## 2. TestBed.createComponent()
 
+`createComponent` mothod basically help you to create a `component` for testing, it takes the `component` class name as argument and returns a `ComponentFixture<T>`.
 
-## 2. TestBed
-So far, you've used pure Jasmine syntax to test an Angular Component as a class, that's not bad, but it is complex when you try to test other Angular features as `Services`, `Dependency Injection`, detect changes on `Components` and much more. That why Angular team decides add a powerful utility called `TestBed` to avoid you get frustrated while trying to test any Angular application.
+## 3. ComponentFixture<T>.componentInstance
 
-TestBed is the most important utility you have to consider when you're going to write a test for an Angular app. TestBed allows you to do a bunch of cool stuffs, like create your own `@ngModule` using the `configureTestingModule` `TestBed` method, create `Component` intances, and much more. The `TestBed.configureTestingModule`method takes an object as argument very similar to `@ngModule`, in fact we can use most of the properties of a normal `NgModule`. Ahh... and this method you have to configure it inside `beforeEach` function. It looks a little bit scary :fearful: but it's really easy actually. Let see an example:
-
-```js
-
-// The TestBed one of the Angular testing utilities and has to be imported.
-import { TestBed } from '@angular/core/testing';
-// Import Components, Services and utilities you need
-
-.
-.
-. 
-.
-// sync beforeEach
-beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [ ],
-      declarations: [ ],
-      providers: [ ]
-    }).compileComponents(); // compile template and css
-});
-
-.
-.
-.
-.
-
-```
-
-## 2. Async function 
-As developer, the things you most want to test are `Components`, these `Components` can have inline Templates or external Templates, that is a little problem at moment of testing because when a `Component` has an external template Angular template compiler must read the external files from the file system and this is an asynchronous task, we have to ensure this task ends to be able to create an instance of a `Component`. 
-
-`Async` is also a function of the Angular testing utilities, you can use it for many async tasks in testin, in this case behaves as a wrapper for `beforeEach` parameter, before our `TestBed.configureTestingModule`, let's see what is this about using the same example:
-
-```js
-
-// The async one of the Angular testing utilities and has to be imported.
-import { TestBed, async } from '@angular/core/testing';
-// Import Components, Services and utilities you need
-
-.
-.
-. 
-.
-// sync beforeEach
-beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ ],
-      declarations: [ ],
-      providers: [ ]
-    }).compileComponents(); // compile template and css
-}));
-
-.
-.
-.
-.
-
-```
+Allows you to create an instance of the root component class, this case you are creating an `AppComponent` and `componentInstance` will return an instance of that `Appcomponent`.
 
 
-## Challenge #3
+## Challenge #4
 
-You have to admit it, Challenge #2 was so easy that even my blind grandfather could do it:older_man:
-
-**Come on guys!! let't make it more interesting. :facepunch:**
+This is getting better each time :bowtie:
 
 - Have you noticed that there's an inline template in the `app.component.ts` file? Nice..! let's separate them, move the inline template to an external template:
   - Create a file...
@@ -123,4 +60,4 @@ You have to admit it, Challenge #2 was so easy that even my blind grandfather co
   - **Note:** Do the same process for `joke.component.ts`, it is important to keep the file names, just change the extension. e.g: `joke.component.html`
 - Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint:*** use `async` for `configureTestingModule`
 
-### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/4#your-first-unit-test-in-angular)
+### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
