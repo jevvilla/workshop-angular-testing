@@ -1,22 +1,33 @@
 # Your First Unit Test in Angular
-You did it again!! :clap: :clap: :clap: if didn't, do not worry, do it better next time, `app.component.spec.ts` code should look like this so far:
+:cold_sweat: Challenge#3 was tough :cold_sweat: If you did it, this is how your `app.component.spec.ts` file must look like:
 
 ```js
 
-// 1. import what you think it's necesary
+// 1. import TestBed and async utilities
+import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from "./app.component";
 
+
 describe('AppComponent', ()=>{
-	// 2. declare a new instance of AppComponent class 	
 	let component = new AppComponent();
 	let truly: boolean = true;
+
+	// 2. create a function beforeEach using async function as wrapper for its parameter 		
+	beforeEach(async(()=>{
+
+	// 3. use configureTestingModule TestBed Method to make your own @ngModule for testing	
+		TestBed.configureTestingModule({
+			imports: [],
+			declarations: [],
+			providers: []
+		}).compileComponents();
+	}));
 
 	it('should evaluate truly variable to return true', ()=>{
 		// expect(truly).toBeTruthy();
 		expect(truly).toBe(true);
 	});
 
-	// 3. spec to evaluate title of AppComponent class
 	it('should have as title "Chuck Norris Jokes"', ()=>{
 		expect(component.title).toEqual('Chuck Norris Jokes');
 	});
