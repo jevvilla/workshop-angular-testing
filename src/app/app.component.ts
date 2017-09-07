@@ -3,10 +3,8 @@ import { JokeService } from './joke.service';
 
 @Component({
   selector: 'app-root',
-  template: ` <div class="container">
-                <app-joke></app-joke>
-              </div>
-            `
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   

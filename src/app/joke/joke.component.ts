@@ -4,12 +4,8 @@ import { JokeService } from '../joke.service';
 
 @Component({
   selector: 'app-joke',
-  template: ` <div class="jumbotron">
-                <h1>{{title}}</h1>
-                <h6>{{joke}}</h6>
-                <button id="mybtn" class="btn btn-primary btn-lg" (click)="getJoke()">Get next joke</button>
-              </div>
-            `
+  templateUrl: './joke.component.html',
+  styleUrls: ['./joke.component.css']
 })
 export class JokeComponent implements OnInit {
 
