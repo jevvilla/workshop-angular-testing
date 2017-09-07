@@ -7,9 +7,9 @@ Congrats!! 🎉🎉🎉 hope you did it well, if you didn't, do not worry, do it
 describe('AppComponent', () => {
 
 	// 2. declare a boolean variable called truly 
-	let truly;
-
-	// 3. Evaluate truly variable, be sure it's value is true
+	let truly = true;
+  
+	// 3. Evaluate truly variable, be sure its value is true
 	it('should evaluate truly variable to return true', () => {
 		expect(truly).toBe(true);
     // or expect(truly).toBeTruthy();
