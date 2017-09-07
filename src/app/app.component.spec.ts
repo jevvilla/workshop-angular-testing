@@ -7,11 +7,7 @@ describe('AppComponent', ()=>{
 
 	// 3. Create a string variable title
 	let title: string = 'Chuck Norris Jokes';
-	let truly;
-
-	beforeEach(()=>{
-		truly = true;
-	});
+	let truly: boolean = true;
 
 	it('should evaluate truly variable to return true', ()=>{
 		// expect(truly).toBeTruthy();
