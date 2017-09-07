@@ -17,7 +17,7 @@ describe('AppComponent', () => {
 })
 ```
 
-You already have tools to solve challenge #2, but before starting it's appropriate let you know that in Angular everything is a class (`Components`, `Services`, `Pipes`, etc), therefore you can make instaces of it. Remember import the respective class before instantiate it;
+You already have tools to solve challenge #2, but before starting it's appropriate let you know that in Angular everything is a class (`Components`, `Services`, `Pipes`, etc), therefore you can make instaces of it. Remember import the respective class before instantiate it.
 
 ## Challenge #2
 
