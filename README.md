@@ -42,7 +42,7 @@ Fixture for debugging and testing a component, provides you access to the `compo
 
 ## 2. TestBed.createComponent()
 
-`createComponent` mothod basically help you to create a `component` for testing, it takes the `component` class name as argument and returns a `ComponentFixture<T>`.
+`createComponent` mothod basically helps you to create a `component` for testing, it takes the `component` class name as argument and returns a `ComponentFixture<T>`.
 
 ## 3. ComponentFixture<T>.componentInstance
 
@@ -51,13 +51,15 @@ Allows you to create an instance of the root component class, this case you are 
 
 ## Challenge #4
 
-This is getting better each time :bowtie:
+getting better each time :bowtie: Time to refactor our code again
 
-- Have you noticed that there's an inline template in the `app.component.ts` file? Nice..! let's separate them, move the inline template to an external template:
-  - Create a file...
-  - Name it correctly..
-  - Reference it in the component..
-  - **Note:** Do the same process for `joke.component.ts`, it is important to keep the file names, just change the extension. e.g: `joke.component.html`
-- Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint:*** use `async` for `configureTestingModule`
+**TIP: Follow steps in order don't miss out on anything**
+
+- Import `ComponentFixture` from '@angular/core/testing', import `HttpModule` too, Import `JokeComponent` and `JokeService`. Weird, right!? :confused: *(later we will notice why)*
+- Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
+- Chage this `let component = new AppComponent();` for this `let component: AppComponent;`.
+- Create another `beforeEach` right below previous one. Hope you remember how.
+- Inside the second `beforeEach` create a `component` and makes it equal to `fixture` variable. ***Hint: use TestBed.createComponent method*** 
+- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to `component` variable. ***Hint: use fixture componentInstance method*** 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
