@@ -10,9 +10,7 @@ After downloading or cloning the app, you have to install all its dependencies r
 
 ## 2. Run Application
 
-<<<<<<< HEAD
 once all depencecies've been installed, its time to run our application, simply run `ng s -o` and after seconds app will be served in `localhost:4200`
-=======
 Once all depencecies've been installed, it's time to run our application, simply run `ng serve -o` and after a few seconds, the app will be served in `localhost:4200`.
 
 ## 3. Some theory :book: :books:
@@ -60,4 +58,3 @@ describe('Hello world', () => {
   });
 });
 ```
->>>>>>> 701fdf99c92c6e71ca024654d8f8cf81a74129cf
