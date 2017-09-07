@@ -59,7 +59,7 @@ getting better each time :bowtie: Time to refactor our code again
 - Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
 - Change this `let component = new AppComponent();` for this `let component: AppComponent;`.
 - Create a `sync` `beforeEach` right below previous one. Hope you remember how.
-- Inside the second `beforeEach` create a `component` and makes it equal to `fixture` variable. ***Hint: use TestBed.createComponent method*** 
-- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to `component` variable. ***Hint: use fixture componentInstance method*** 
+- Inside the second `beforeEach` create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent method*** 
+- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture componentInstance method*** 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
