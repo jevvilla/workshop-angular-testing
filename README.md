@@ -82,7 +82,7 @@ import { TestBed, async } from '@angular/core/testing';
 .
 . 
 .
-// sync beforeEach
+// async beforeEach
 beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ ],
