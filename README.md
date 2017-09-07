@@ -1,5 +1,31 @@
 # Your First Unit Test in Angular
 
+Before starting making tests, it is a good idea to have in mind some concepts and terminology.
+
+## 1. Jasmine
+
+Jasmine is an open source JavaScript framework for testing, in general, Jasmine attempts to describe tests in a human readable format so that non-technical people can understand what is being tested. Within its sintax we'll find some main methods or functions wich are essential for testing any application, those methods are:
+
+- Suites-`describe(string, function)` function defines what we call a ***Test Suite***, this function takes a title as `string` and a function as second parameter contaning one or more specs, we can understand `describe` function as a wrapper for our test.  
+- Specs-`it(string, function)` function defines individual ***Test Suite***, `it` function can contain one or more Expectations, and takes `string` as title and a function that wraps Expectations.
+- Expectations-`expect(actual)` expression is what we call an Expectation, are assertions that evaluate to true or false
+- Matchers-`matcher(expected)` expression is what we call a Matcher. It does a boolean comparison with the expected value passed in vs the actual value passed to the expect function. You can find a complete list [here](https://github.com/JamieMason/Jasmine-Matchers#matchers)
+
+Below there is a fragment of code where we show a basic Setup example to evaluate that `expected` variable actually has `'Hello World' string`
+value.
+
+```js
+describe('Hello world', () => {
+
+  let expected = "Hello world";
+
+  it('says Hello world', () => {
+    expect(expected)
+        .toEqual('Hello world');
+  });
+});
+```
+
 ## Challenge #1
 
 - First, in our `app` folder, create a file called `app.component.spec.ts`.
