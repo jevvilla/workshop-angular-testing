@@ -38,7 +38,7 @@ As you already know, you have to learn something new to be able to solve each ch
 
 ## 1. ComponentFixture<T>
 
-Fixture for debugging and testing a component, provides you access to the `component` instance itself, and everything attached to the `component` like `DOM elements`, `dependencies` etc, takes as argument the component class name. e.g `ComponentFixture<AppComponent>` this case.
+Fixture for debugging and testing a component, provides you access to the `component` instance itself, and everything attached to the `component` like `DOM elements`, `dependencies` etc. `ComponentFixture<T>` takes as argument the component class name. e.g `ComponentFixture<AppComponent>` this case.
 
 ## 2. TestBed.createComponent()
 
@@ -46,7 +46,7 @@ Fixture for debugging and testing a component, provides you access to the `compo
 
 ## 3. ComponentFixture<T>.componentInstance
 
-Allows you to create an instance of the root component class, this case you are creating an `AppComponent` and `componentInstance` will return an instance of that `Appcomponent`.
+Allows you to create an instance of `component` class, this case you are creating an `AppComponent` and `componentInstance` will return an instance of `Appcomponent`.
 
 
 ## Challenge #4
@@ -58,9 +58,9 @@ getting better each time :bowtie: Time to refactor our code again
 - Import `ComponentFixture` from '@angular/core/testing', import `HttpModule` too, Import `JokeComponent` and `JokeService`. Weird, right!? :confused: *(later you will notice why)*
 - Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
 - Change this `let component = new AppComponent();` for this `let component: AppComponent;`.
-- Make declaration, imports and providers inside your async `beforeEach`. It is like creating a mini @ngModule
-- Create a `sync` `beforeEach` right below previous one. Hope you remember how.
-- Inside the second `beforeEach` create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent method*** 
-- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture componentInstance method*** 
+- Make declaration, imports and providers inside your async `TestBed.configureTestingModule`. It is like creating a `@ngModule`
+- Create a `sync` `beforeEach` right below previous one. Hope you remember how. ***Hint: don't use async function*** 
+- Inside the second `beforeEach` *(just created)*, create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent() method and pass it `AppComponent` as parameter*** 
+- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture.componentInstance property *** 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
