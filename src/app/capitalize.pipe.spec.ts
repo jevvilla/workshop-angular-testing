@@ -5,6 +5,6 @@ describe('CapitalizePipe', () => {
 
   it('should evaluate first letter capitalized in string', () => {
       const pipe = new CapitalizePipe();
-      expect(pipe.transform(myName)).toEqual('Pepito Perez ');
+      expect(pipe.transform(myName)).toEqual('Pepito Perez');
   });
 });
