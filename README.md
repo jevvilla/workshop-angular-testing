@@ -2,13 +2,20 @@
 Testing a `Pipe` sometimes is not an easy task, :clap: :clap: you did it so good :clap: :clap:. Now your `capitalize.pipe.spec.ts` file must be similar to this:
 
 ```js
+// 1. import CapitalizePipe
 import { CapitalizePipe } from './capitalize.pipe';
 
 describe('CapitalizePipe', () => {
+  	// 2. Create a variable called myName and makes it equal to your name using random capital letters
   let myName = 'pEPiTO pEReZ';
 
+	// 3. Create an spec to  evaluate first letter capitalized
   it('should evaluate first letter capitalized in string', () => {
+	  // 4. create a new intance of CapitalizePipe()
       const pipe = new CapitalizePipe();
+
+	  // 5. invoke transform method of CapitalizePipe class and pass it as parameter myName,
+	  // it should return 'Pepito Perez' this case.
       expect(pipe.transform(myName)).toEqual('Pepito Perez');
   });
 });
@@ -61,7 +68,6 @@ Let's see how it looks in code: ***Hint: this example uses asyn and inject becau
 	})));
 ```
 
-
 ## Challenge #7
 
 **TIP: Follow steps in order don't miss out on anything**
@@ -72,11 +78,7 @@ Let's see how it looks in code: ***Hint: this example uses asyn and inject becau
 - Configure appropriate the `TestBed.configureTestingModule` in the first `beforeEach`.
 - In the second `beforeEach` create `JokeComponent` using `TestBed`, create an `componentInstance` using `fixture` and create a new instance of `CapitalizePipe()`. ***Hint: take a look how you did it in app.component.spec.ts***
 - Create a `spec` following the second example above.
-- Inside `spec`, firstly call `getJoke()` `jokeService` method, (*it returns an Observable*) `subscribe` to it and make `joke` variable equal to the response inside the `subscribe`. ***Hint: It is necessary ***
-- 
-- 
+- Inside `spec`, firstly call `getJoke()` `jokeService` method, (*it returns an Observable*) `subscribe` to it and make `joke` variable equal to the response inside the `subscribe`. ***Hint: It is necessary trigger detectChanges() method after***
+- Inside `fixture.whenStable`... evaluate that `pipe.transform(joke)` is not equal to `joke`. ***Hint: use expect().not.toEqual to compare not equal values!***
 
-
-
-
-### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)
+This was the last challenge :cry: :cry: :cry: it's too sad I know. I Hope you have finished all challenges succesfully and learned some Angular testing basics, if you haven't, don't worry just try it once more and become a Rock!!! :muscle: :muscle: :punch: 
