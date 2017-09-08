@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from "./app.component";
 import { JokeComponent } from './joke/joke.component';
 import { JokeService } from './joke.service';
-// 1. improt DebugElement
+// 1. import DebugElement
 import { DebugElement } from "@angular/core";
 
 
@@ -30,7 +30,7 @@ describe('AppComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(AppComponent);
 		component = fixture.componentInstance;
-		// 3. 
+		// 3. assign fixture.debugElement
 		element = fixture.debugElement;
 	});
 
@@ -45,8 +45,16 @@ describe('AppComponent', () => {
 
 	it('should have as title "Chuck Norris Jokes"', () => {
 		expect(component.title).toEqual('Chuck Norris Jokes');
-	});
+  });
 
+  // 4.  h1 element should be empty before detect changes
+  // That’s because when Angular first loads no change detection has been
+   // triggered and therefore the view doesn’t show
+  it('h1 element should be empty when application init',() => {
+    expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual('')
+  });
+
+  // 5. After detect changes h1 element should have component.title
 	it('should evaluate title variable in a h1 tag', () => {
 		fixture.detectChanges();
 		expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual(component.title);

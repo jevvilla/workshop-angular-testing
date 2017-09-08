@@ -45,31 +45,26 @@ describe('AppComponent', () => {
 ```
 As you already know, you have to learn something new to be able to solve each challenge, let see:
 
-## 1. ComponentFixture<T>
+## 1. DebugElement
 
-Fixture for debugging and testing a component, provides you access to the `component` instance itself, and everything attached to the `component` like `DOM elements`, `dependencies` etc, takes as argument the component class name. e.g `ComponentFixture<AppComponent>` this case.
+Is a handle on the `component` 's DOM element, you can access to any element by using `nativeElement.querySelector()` method which receives a `predicate` as parameter. e.g A `predicate` could be `div#myId` as you reference an `element` with Id in `CSS`.
 
-## 2. TestBed.createComponent()
+## 2. ComponentFixture<T>.detectChanges
 
-`createComponent` mothod basically helps you to create a `component` for testing, it takes the `component` class name as argument and returns a `ComponentFixture<T>`.
-
-## 3. ComponentFixture<T>.componentInstance
-
-Allows you to create an instance of the root component class, this case you are creating an `AppComponent` and `componentInstance` will return an instance of that `Appcomponent`.
+As its name says, it helps you to detect changes in `component` *(AppConponent this case)* . To trigger change detection we call the function `fixture.detectChanges()`, you can use it as meny times you need.
 
 
-## Challenge #4
+## Challenge #5
 
-getting better each time :bowtie: Time to refactor our code again
+Hope you have leaned too much so far.
 
 **TIP: Follow steps in order don't miss out on anything**
 
-- Import `ComponentFixture` from '@angular/core/testing', import `HttpModule` too, Import `JokeComponent` and `JokeService`. Weird, right!? :confused: *(later you will notice why)*
-- Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
-- Change this `let component = new AppComponent();` for this `let component: AppComponent;`.
-- Make declaration, imports and providers inside your async `beforeEach`. It is like creating a mini @ngModule
-- Create a `sync` `beforeEach` right below previous one. Hope you remember how.
-- Inside the second `beforeEach` create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent method*** 
-- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture componentInstance method*** 
+- Import `DebugElement` from '@angular/core'.
+- Create a  `DebugElement` variable called `element`.
+- Inside your second `beforeEach` assign `fixture.debugElement` to the variable just created
+- Go to `joke.component.ts` and add an `Id` to h1 element.
+- Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 element and its content***
+- Create an `spec` to verify value of h1 element **after fixture.detectChanges()**. ***Hint: After detecting changes, h1 element has to be equal to title component variable***
 
-### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
+### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/6#your-first-unit-test-in-angular)
