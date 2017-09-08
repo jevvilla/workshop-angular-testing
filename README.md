@@ -1,5 +1,5 @@
 # Your First Unit Test in Angular
-You have finished to test `AppComponent`. Now your `app.component.spec.ts` file must be similar to this:
+woohoo!! You have finished to test `AppComponent` :clap: :clap: :clap: :clap: . Now your `app.component.spec.ts` file must be similar to this:
 
 ```js
 
