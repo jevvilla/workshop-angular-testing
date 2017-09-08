@@ -74,7 +74,7 @@ All `specs` are going to fail after this change, to fix them just have to ` impo
 ## Challenge #6
 
 **TIP: Follow steps in order don't miss out on anything**
-- Create a file inside app folder and named `capitalize.pipe.spec.ts`.
+- Create a file inside app folder and name it `capitalize.pipe.spec.ts`.
 - Import `CapitalizePipe` inside file you just create.
 - Create a basic structure for testing You only need to use `describe` and `spec` (`it`). **NOTE: No need to use TestBed**
 - Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
