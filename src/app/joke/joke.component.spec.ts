@@ -9,6 +9,7 @@ describe('JokeComponent', () => {
 	let jokeComponent: JokeComponent;
 	let fixture: ComponentFixture<JokeComponent>;
 	let pipe: CapitalizePipe;
+	let joke = '';
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -24,7 +25,11 @@ describe('JokeComponent', () => {
 		pipe = new CapitalizePipe();
 	});
 
-	it('should inject service into component', inject([JokeService], (jokeService: JokeService) => {
-		jokeService.getJoke().subscribe(value => console.log(value));
-	}));
+	it('should inject service into component', async(inject([JokeService], (jokeService: JokeService) => {
+		jokeService.getJoke().subscribe(value => joke = value);
+		fixture.detectChanges();
+		fixture.whenStable().then(() => {
+			console.log(joke);
+		});
+	})));
 });

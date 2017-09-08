@@ -17,15 +17,51 @@ describe('CapitalizePipe', () => {
 So far you have **6** SUCCESS `specs` and **0** failures :smiley: :smiley:
 But we have `joke.component.ts` and `joke.service.ts` pending to test. Let's continue testing `joke.component.ts`
 
+But first you have to know this:
+
+## 1. fixture.whenStable()
+The whenStable promise resolves when all pending asynchronous activities within `specs`.
+Do you remember `async` function which you use to wrap `beforeEach` function paramenter?.
+Well... It is time to use it on `specs`. When you you wrap function parameter of an `spec` with `async` it is necesary to use `fixture.whenStable()`. 
+`async` function is used to perform async tasks, this case you will use it to call a `service` method which makes a `http` request.
+Here a snippet of code :
+
+```js
+	it('', async(() => {
+		/*
+		* here you make some async activities.
+		* sometimes it is ok detect changes after
+		*/
+		fixture.whenStable().then(() => {
+			/*
+			* perform another activity after those async tasks finished
+			* 
+			*/
+		});
+	}));
+```
+
+## 2. inject function
+Basicaly allows you to `inject` dependencies in `specs`, If you want to test a service, you need to use `inject` to be able to use this service on this `spec`.
+Let's see how it looks in code: ***Hint: this example uses asyn and inject because service performs an async task, and guess what! this how you need to use it in this challenge***
+
+```js
+	it('', async(inject([JokeService], (jokeService: JokeService) => {
+		/*
+		* Now you can use jokeService methods
+		* 
+		*/
+	})));
+```
+
+
 ## Challenge #7
 
 **TIP: Follow steps in order don't miss out on anything**
 - Create a file inside app folder and name it `joke.component.spec.ts`.
 - Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
 - Create a structure for testing having in mind youo have to use `TestBed` to `configureTestingModule` and other important things. ***Hint: take a look how you did it in app.component.spec.ts***
-- Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
-- Inside the `it` create a new instance of `CapitalizePipe`
-- Verify `Pipe` actually transform `myName` variable. ***Hint: use transform CapitalizePipe method and pass it `myName` as parameter. It should return a string first letter capitalized ***
+- Cr
 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)
