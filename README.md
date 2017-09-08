@@ -3,7 +3,7 @@ You did it again!! :clap: :clap: :clap: if didn't, do not worry, do it better ne
 
 ```js
 
-// 1. import what you think it's necesary
+// 1. import what you think it's necessary
 import { AppComponent } from "./app.component";
 
 describe('AppComponent', ()=>{
