@@ -24,8 +24,8 @@ You already have tools to solve challenge #2, but before starting it's appropria
 Time to test something real in our app. *Use the same structure you created before*:
 
 - Import `AppComponent`.
-- Create a new instance of it.
-- Create a `spec` (`it`) to ensure `AppComponent` title varible is equal to `'Chuck Norris Jokes'`.
+- Create a new instance of it. ***Hint: create a new variable named 'component' and makes equal to new instance of AppComponent***
+- Create a `spec` (`it`) to ensure `AppComponent` title varible is equal to `'Chuck Norris Jokes'`. ***Hint: use .toEqual() instead .toBe()***
 
 **You already know how to verify if everything it's ok in your code, if the 2 `specs` are successful then you're ready to take challenge #3**
 
