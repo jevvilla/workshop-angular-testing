@@ -2,7 +2,7 @@
 
 In this workshop we'll cover the most common unit tests in Angular Applications. We'll learn some basics by doing testing to Components, Services and Pipes. Hope you enjoy :blush:
 
-During whole workshop we will work on  `Workshop-ATesting` application, which is a very basic app about consuming a random Chuck Norris Jokes API and the result is displayed on the screen.
+During whole workshop we will work on  `Chuck Norris Jokes` application, which is a very basic app about consuming a random Chuck Norris Jokes API and the result is displayed on the screen.
 
 ## 1. Download or clone this Repo
 
