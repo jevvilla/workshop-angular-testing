@@ -1,5 +1,5 @@
 # Your First Unit Test in Angular
-Testing a `Pipe` sometimes is not a easy task, :clap: :clap: you did it so good :clap: :clap:. Now your `capitalize.pipe.spec.ts` file must be similar to this:
+Testing a `Pipe` sometimes is not an easy task, :clap: :clap: you did it so good :clap: :clap:. Now your `capitalize.pipe.spec.ts` file must be similar to this:
 
 ```js
 import { CapitalizePipe } from './capitalize.pipe';
