@@ -1,72 +1,21 @@
 # Your First Unit Test in Angular
-woohoo!! You have finished to test `AppComponent` :clap: :clap: :clap: :clap: . Now your `app.component.spec.ts` file must be similar to this:
+Testing a `Pipe` sometimes is not a easy task, :clap: :clap: you did it so good :clap: :clap:. Now your `capitalize.pipe.spec.ts` file must be similar to this:
 
 ```js
+import { CapitalizePipe } from './capitalize.pipe';
 
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+describe('CapitalizePipe', () => {
+  let myName = 'pEPiTO pEReZ';
 
-import { AppComponent } from "./app.component";
-import { JokeComponent } from './joke/joke.component';
-import { JokeService } from './joke.service';
-// 1. import DebugElement
-import { DebugElement } from "@angular/core";
+  it('should evaluate first letter capitalized in string', () => {
+      const pipe = new CapitalizePipe();
+      expect(pipe.transform(myName)).toEqual('Pepito Perez');
+  });
+});
 
-
-describe('AppComponent', () => {
-
-	let fixture: ComponentFixture<AppComponent>;
-	// 2. declare a variable called element.
-	let element: DebugElement;
-	let component: AppComponent;
-	let truly: boolean = true;
-
-
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			imports: [HttpModule],
-			declarations: [AppComponent, JokeComponent],
-			providers: [JokeService]
-		}).compileComponents();
-	}));
-
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(AppComponent);
-		component = fixture.componentInstance;
-		// 3. assign fixture.debugElement
-		element = fixture.debugElement;
-	});
-
-	it('should create the app', () => {
-		expect(component).toBeTruthy();
-	  });
-
-	it('should evaluate truly variable to return true', () => {
-		// expect(truly).toBeTruthy();
-		expect(truly).toBe(true);
-	});
-
-	it('should have as title "Chuck Norris Jokes"', () => {
-		expect(component.title).toEqual('Chuck Norris Jokes');
-  	});
-
-	// 4.  h1 element should be empty before detect changes
-	// That’s because when Angular first loads no change detection has been
-	// triggered and therefore the view doesn’t show
-	it('h1 element should be empty when application init',() => {
-		expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual('')
-	});
-
-  	// 5. After detect changes h1 element should have component.title
-	it('should evaluate title variable in a h1 tag', () => {
-		fixture.detectChanges();
-		expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual(component.title);
-	});
-})
 ```
-You can add more `specs` to practice what you have learned so far.
-Now you will start to test a `Pipe`. Isn't that cool?  :sunglasses:
+So far you have **6** SUCCESS `specs` and **0** failures :smiley: :smiley:
+But we have `joke.component.ts` and `joke.service.ts` pending to test. Let's continue testing `joke.component.ts`
 
 Before start to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.ts` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
 All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to decalrations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
