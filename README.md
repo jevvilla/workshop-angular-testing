@@ -21,7 +21,7 @@ But we have `joke.component.ts` and `joke.service.ts` pending to test. Let's con
 
 **TIP: Follow steps in order don't miss out on anything**
 - Create a file inside app folder and name it `joke.component.spec.ts`.
-- Import `inject`, `async`, `ComponentFixture`, `TestBed` inside file you just create from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
+- Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
 - Create a structure for testing having in mind youo have to use `TestBed` to `configureTestingModule` and other important things. ***Hint: ***
 - Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
 - Inside the `it` create a new instance of `CapitalizePipe`
