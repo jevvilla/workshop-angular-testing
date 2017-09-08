@@ -30,7 +30,7 @@ describe('AppComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(AppComponent);
 		component = fixture.componentInstance;
-		// 3.
+		// 3. assign fixture.debugElement
 		element = fixture.debugElement;
 	});
 

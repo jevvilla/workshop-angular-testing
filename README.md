@@ -60,12 +60,11 @@ Hope you have leaned too much so far.
 
 **TIP: Follow steps in order don't miss out on anything**
 
-- Import `ComponentFixture` from '@angular/core/testing', import `HttpModule` too, Import `JokeComponent` and `JokeService`. Weird, right!? :confused: *(later you will notice why)*
-- Create a variable called `fixture` whose type will be `ComponentFixture<AppComponent>`.
-- Change this `let component = new AppComponent();` for this `let component: AppComponent;`.
-- Make declaration, imports and providers inside your async `beforeEach`. It is like creating a mini @ngModule
-- Create a `sync` `beforeEach` right below previous one. Hope you remember how.
-- Inside the second `beforeEach` create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent method*** 
-- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture componentInstance method*** 
+- Import `DebugElement` from '@angular/core'.
+- Create a  `DebugElement` variable called `element`.
+- Inside your second `beforeEach` assign `fixture.debugElement` to the variable just created
+- Go to `joke.component.ts` and add an `Id` to h1 element.
+- Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 element and its content ***
+- Create an `spec` to varify value of h1 element **after fixture.detectChanges()**.***Hint: After detecting changes, h1 element has to be equal to title component variable ***
 
-### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
+### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/6#your-first-unit-test-in-angular)
