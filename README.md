@@ -48,9 +48,16 @@ Let's see how it looks in code: ***Hint: this example uses asyn and inject becau
 ```js
 	it('', async(inject([JokeService], (jokeService: JokeService) => {
 		/*
-		* Now you can use jokeService methods
+		* Now you can use jokeService methods like:
+		* jokeService.getJoke()... 
 		* 
 		*/
+		fixture.whenStable().then(() => {
+			/*
+			* perform another activity after those async tasks finished
+			* 
+			*/
+		});
 	})));
 ```
 
@@ -61,7 +68,15 @@ Let's see how it looks in code: ***Hint: this example uses asyn and inject becau
 - Create a file inside app folder and name it `joke.component.spec.ts`.
 - Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
 - Create a structure for testing having in mind youo have to use `TestBed` to `configureTestingModule` and other important things. ***Hint: take a look how you did it in app.component.spec.ts***
-- Cr
+- Create an empty string variable and called `joke`;
+- Configure appropriate the `TestBed.configureTestingModule` in the first `beforeEach`.
+- In the second `beforeEach` create `JokeComponent` using `TestBed`, create an `componentInstance` using `fixture` and create a new instance of `CapitalizePipe()`. ***Hint: take a look how you did it in app.component.spec.ts***
+- Create a `spec` following the second example above.
+- Inside `spec`, firstly call `getJoke()` `jokeService` method, (*it returns an Observable*) `subscribe` to it and make `joke` variable equal to the response inside the `subscribe`. ***Hint: It is necessary ***
+- 
+- 
+
+
 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)

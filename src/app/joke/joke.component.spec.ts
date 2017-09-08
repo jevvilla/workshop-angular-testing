@@ -25,11 +25,11 @@ describe('JokeComponent', () => {
 		pipe = new CapitalizePipe();
 	});
 
-	it('should inject service into component', async(inject([JokeService], (jokeService: JokeService) => {
+	it('should verify service', async(inject([JokeService], (jokeService: JokeService) => {
 		jokeService.getJoke().subscribe(value => joke = value);
 		fixture.detectChanges();
 		fixture.whenStable().then(() => {
-			console.log(joke);
+			expect(pipe.transform(joke)).not.toEqual(joke);
 		});
 	})));
 });
