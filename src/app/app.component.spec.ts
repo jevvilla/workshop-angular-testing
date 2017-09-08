@@ -1,4 +1,4 @@
-// 1. Create a basic testing structure using what you think it's necesary
+// 1. Create a basic testing structure using what you think it's necessary
 describe('AppComponent', () => {
 
 	// 2. declare a boolean variable called truly 
