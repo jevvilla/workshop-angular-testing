@@ -17,13 +17,13 @@ describe('AppComponent', () => {
 })
 ```
 
-You already have tools to solve challenge #2, but before starting it's appropriate let you know that in Angular everything is a class (`Components`, `Services`, `Pipes`, etc), therefore you can make instaces of it. Remember import the respective class before instantiate it.
+You already have tools to solve challenge #2, but before starting it's appropriate let you know that in Angular everything is a class (`Components`, `Services`, `Pipes`, etc), therefore you can instantiate them. Remember import the respective class before instantiate it.
 
 ## Challenge #2
 
-Time to test something real in our app. Use the same spec you created before:
+Time to test something real in our app. *Use the same structure you created before*:
 
-- Import `AppComponent` into the spec.
+- Import `AppComponent`.
 - Create a new instance of it.
 - Create a `spec` (`it`) to ensure `AppComponent` title varible is equal to `'Chuck Norris Jokes'`.
 
