@@ -51,20 +51,20 @@ Is a handle on the `component` 's DOM element, you can access to any element by 
 
 ## 2. ComponentFixture<T>.detectChanges
 
-As its name says, it helps you to detect changes in `component` *(AppConponent this case)* . To trigger change detection we call the function `fixture.detectChanges()`, you can use it as meny times you need.
+As its name says, it helps you to detect changes in `component` *(AppConponent this case)* . To trigger change detection we call the function `fixture.detectChanges()`, you can use it as many times as you need.
 
 
 ## Challenge #5
 
-Hope you have leaned too much so far.
+Hope you have learned too much so far.
 
-**TIP: Follow steps in order don't miss out on anything**
+**NOTE: Follow steps in order don't miss out on anything, and don't delete what you have done before**
 
 - Import `DebugElement` from '@angular/core'.
 - Create a  `DebugElement` variable called `element`.
 - Inside your second `beforeEach` assign `fixture.debugElement` to the variable just created
 - Go to `joke.component.ts` and add an `Id` to h1 element.
-- Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 element and its content***
-- Create an `spec` to verify value of h1 element **after fixture.detectChanges()**. ***Hint: After detecting changes, h1 element has to be equal to title component variable***
+- Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 content***
+- Create a `spec` to verify value of h1 element **after fixture.detectChanges()**. ***Hint: After detecting changes, h1 element has to be equal to title component variable***
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/6#your-first-unit-test-in-angular)
