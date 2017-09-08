@@ -61,6 +61,6 @@ getting better each time :bowtie: Time to refactor our code again
 - Make declaration, imports and providers inside your async `TestBed.configureTestingModule`. It is like creating a `@ngModule`
 - Create a `sync` `beforeEach` right below previous one. Hope you remember how. ***Hint: don't use async function*** 
 - Inside the second `beforeEach` *(just created)*, create a `component` and makes it equal to the `fixture` variable. ***Hint: use TestBed.createComponent() method and pass it `AppComponent` as parameter*** 
-- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture.componentInstance property *** 
+- Inside the second `beforeEach` create an instance of `AppComponent` and makes it equal to the `component` variable. ***Hint: use fixture.componentInstance property*** 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/5#your-first-unit-test-in-angular)
