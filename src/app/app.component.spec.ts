@@ -7,7 +7,7 @@ import { JokeComponent } from './joke/joke.component';
 import { JokeService } from './joke.service';
 // 1. import DebugElement
 import { DebugElement } from "@angular/core";
-
+import { CapitalizePipe } from './capitalize.pipe';
 
 describe('AppComponent', () => {
 
@@ -21,7 +21,7 @@ describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpModule],
-			declarations: [AppComponent, JokeComponent],
+			declarations: [AppComponent, JokeComponent, CapitalizePipe],
 			providers: [JokeService]
 		}).compileComponents();
 	}));
@@ -47,12 +47,14 @@ describe('AppComponent', () => {
 		expect(component.title).toEqual('Chuck Norris Jokes');
   });
 
-  it(' h1 element should be empty when application init',() => {
-    // That’s because when Angular first loads no change detection has been
-    // triggered and therefore the view doesn’t show
+  // 4.  h1 element should be empty before detect changes
+  // That’s because when Angular first loads no change detection has been
+   // triggered and therefore the view doesn’t show
+  it('h1 element should be empty when application init',() => {
     expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual('')
   });
 
+  // 5. After detect changes h1 element should have component.title
 	it('should evaluate title variable in a h1 tag', () => {
 		fixture.detectChanges();
 		expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual(component.title);

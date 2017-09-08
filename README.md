@@ -1,23 +1,27 @@
 # Your First Unit Test in Angular
-Well done, you are almost done with `AppComponent` specs. Now your `app.component.spec.ts` file must be similar to this:
+You have finished to test `AppComponent`. Now your `app.component.spec.ts` file must be similar to this:
 
 ```js
-// 1. Import ComponentFixture, HttpModule, JokeComponent and JokeService
+
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from "./app.component";
 import { JokeComponent } from './joke/joke.component';
 import { JokeService } from './joke.service';
+// 1. import DebugElement
+import { DebugElement } from "@angular/core";
+
 
 describe('AppComponent', () => {
-	// 2. create fixture variable typed as ComponentFixture<AppComponent>
+
 	let fixture: ComponentFixture<AppComponent>;
-	// 3. change component variable and typed as AppComponent
+	// 2. declare a variable called element.
+	let element: DebugElement;
 	let component: AppComponent;
 	let truly: boolean = true;
 
-	// 4. make declaration, imports and providers inside your async beforeEach
+
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpModule],
@@ -26,11 +30,17 @@ describe('AppComponent', () => {
 		}).compileComponents();
 	}));
 
-	// 5. Create a sync beforeEach, and make the appropriate configuration inside it
+
 	beforeEach(() => {
 		fixture = TestBed.createComponent(AppComponent);
 		component = fixture.componentInstance;
+		// 3. assign fixture.debugElement
+		element = fixture.debugElement;
 	});
+
+	it('should create the app', () => {
+		expect(component).toBeTruthy();
+	  });
 
 	it('should evaluate truly variable to return true', () => {
 		// expect(truly).toBeTruthy();
@@ -39,32 +49,32 @@ describe('AppComponent', () => {
 
 	it('should have as title "Chuck Norris Jokes"', () => {
 		expect(component.title).toEqual('Chuck Norris Jokes');
+  });
+
+  // 4.  h1 element should be empty before detect changes
+  // That’s because when Angular first loads no change detection has been
+   // triggered and therefore the view doesn’t show
+  it('h1 element should be empty when application init',() => {
+    expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual('')
+  });
+
+  // 5. After detect changes h1 element should have component.title
+	it('should evaluate title variable in a h1 tag', () => {
+		fixture.detectChanges();
+		expect(element.nativeElement.querySelector('h1#titleApp').textContent).toEqual(component.title);
 	});
 })
-
 ```
-As you already know, you have to learn something new to be able to solve each challenge, let see:
+You can add more `specs` to practice what you have learned so far.
+Now you will start to test a `Pipe`. Isn't that cool?  :sunglasses:
 
-## 1. DebugElement
+Before start to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.ts` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
+All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to decalrations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
 
-Is a handle on the `component` 's DOM element, you can access to any element by using `nativeElement.querySelector()` method which receives a `predicate` as parameter. e.g A `predicate` could be `div#myId` as you reference an `element` with Id in `CSS`.
-
-## 2. ComponentFixture<T>.detectChanges
-
-As its name says, it helps you to detect changes in `component` *(AppConponent this case)* . To trigger change detection we call the function `fixture.detectChanges()`, you can use it as meny times you need.
-
-
-## Challenge #5
-
-Hope you have leaned too much so far.
+## Challenge #6
 
 **TIP: Follow steps in order don't miss out on anything**
+- Create a file inside app folder and named `capitalize.pipe.spec.ts`.
+- Import `CapitalizePipe` inside file you just create.
 
-- Import `DebugElement` from '@angular/core'.
-- Create a  `DebugElement` variable called `element`.
-- Inside your second `beforeEach` assign `fixture.debugElement` to the variable just created
-- Go to `joke.component.ts` and add an `Id` to h1 element.
-- Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 element and its content***
-- Create an `spec` to verify value of h1 element **after fixture.detectChanges()**. ***Hint: After detecting changes, h1 element has to be equal to title component variable***
-
-### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/6#your-first-unit-test-in-angular)
+### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)
