@@ -45,22 +45,18 @@ describe('AppComponent', () => {
 ```
 As you already know, you have to learn something new to be able to solve each challenge, let see:
 
-## 1. ComponentFixture<T>
+## 1. DebugElement
 
-Fixture for debugging and testing a component, provides you access to the `component` instance itself, and everything attached to the `component` like `DOM elements`, `dependencies` etc, takes as argument the component class name. e.g `ComponentFixture<AppComponent>` this case.
+Is a handle on the `component` 's DOM element, you can access to any element by using `nativeElement.querySelector()` method which receives a `predicate` as parameter. e.g A `predicate` could be `div#myId` as you reference an `element` with Id in `CSS`.
 
-## 2. TestBed.createComponent()
+## 2. ComponentFixture<T>.detectChanges
 
-`createComponent` mothod basically helps you to create a `component` for testing, it takes the `component` class name as argument and returns a `ComponentFixture<T>`.
-
-## 3. ComponentFixture<T>.componentInstance
-
-Allows you to create an instance of the root component class, this case you are creating an `AppComponent` and `componentInstance` will return an instance of that `Appcomponent`.
+As its name says, it helps you to detect changes in `component` *(AppConponent this case)* . To trigger change detection we call the function `fixture.detectChanges()`, you can use it as meny times you need.
 
 
-## Challenge #4
+## Challenge #5
 
-getting better each time :bowtie: Time to refactor our code again
+Hope you have leaned too much so far.
 
 **TIP: Follow steps in order don't miss out on anything**
 
