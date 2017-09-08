@@ -76,5 +76,10 @@ All `specs` are going to fail after this change, to fix them just have to ` impo
 **TIP: Follow steps in order don't miss out on anything**
 - Create a file inside app folder and named `capitalize.pipe.spec.ts`.
 - Import `CapitalizePipe` inside file you just create.
+- Create a basic structure for testing You only need to use `describe` and `spec` (`it`). **NOTE: No need to use TestBed**
+- Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
+- Inside the `it` create a new instance of `CapitalizePipe`
+- Verify `Pipe` actually transform `myName` variable. ***Hint: use transform CapitalizePipe method and pass it `myName` as parameter. It should return a string first letter capitalized ***
+
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)
