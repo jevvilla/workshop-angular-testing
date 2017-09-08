@@ -22,7 +22,7 @@ But first you have to know this:
 ## 1. fixture.whenStable()
 The whenStable promise resolves when all pending asynchronous activities within `specs`.
 Do you remember `async` function which you use to wrap `beforeEach` function paramenter?.
-Well... It is time to use it on `specs`. When you you wrap function parameter of an `spec` with `async` it is necesary to use `fixture.whenStable()`. 
+Well... It is time to use it on `specs`. When you you wrap function parameter of an `spec` with `async` it is necessary to use `fixture.whenStable()`. 
 `async` function is used to perform async tasks, this case you will use it to call a `service` method which makes a `http` request.
 Here a snippet of code :
 
