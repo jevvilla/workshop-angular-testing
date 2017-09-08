@@ -32,14 +32,14 @@ You must be wondering, :thinking: is this the only thing I have to configure? th
 
 - <b>beforeAll:</b> This function is called once, <i><b>before</b></i> all the specs in `describe` test suite are run.
 - <b>afterAll:</b> This function is called once <i><b>after</b></i> all the specs in a test suite are finished.
-- <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification, `it` function, has been run.
-- <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has been run.
+- <b>beforeEach:</b> This function is called <i><b>before each</b></i> test specification (*`it` function*) has run.
+- <b>afterEach:</b> This function is called <i><b>after each</b></i> test specification has run.
 
 
 ## 2. TestBed
-So far, you've used pure Jasmine syntax to test an Angular Component as a class, that's not bad, but it is complex when you try to test other Angular features as `Services`, `Dependency Injection`, detect changes on `Components` and much more. That why Angular team decides add a powerful utility called `TestBed` to avoid you get frustrated while trying to test any Angular application.
+So far, you've used pure Jasmine syntax to test an Angular Component as a class, that's not bad, but it is complex when you try to test other Angular features as `Services`, `Dependency Injection`, detect changes on `Components` and much more. That's why Angular team decides to add a powerful utility called `TestBed` to avoid you get frustrated while trying to test any Angular application.
 
-TestBed is the most important utility you have to consider when you're going to write a test for an Angular app. TestBed allows you to do a bunch of cool stuffs, like create your own `@ngModule` using the `configureTestingModule` `TestBed` method, create `Component` intances, and much more. The `TestBed.configureTestingModule`method takes an object as argument very similar to `@ngModule`, in fact we can use most of the properties of a normal `NgModule`. Ahh... and this method you have to configure it inside `beforeEach` function. It looks a little bit scary :fearful: but it's really easy actually. Let see an example:
+TestBed is the most important utility you have to consider when you're going to write a test for an Angular app. TestBed allows you to do a bunch of cool stuffs, like create your own `@ngModule` using the `configureTestingModule` `TestBed` method, create `Component`'s, instantiates them, etc. The `TestBed.configureTestingModule`method takes an object as argument very similar to `@ngModule`, in fact we can use most of the properties of a normal `NgModule`. Ahh... and this method you have to configure it inside `beforeEach` function. It looks a little bit scary :fearful: but it's really easy actually. Let's see an example:
 
 ```js
 
@@ -68,9 +68,9 @@ beforeEach(() => {
 ```
 
 ## 2. Async function 
-As developer, the things you most want to test are `Components`, these `Components` can have inline Templates or external Templates, that is a little problem at moment of testing because when a `Component` has an external template Angular template compiler must read the external files from the file system and this is an asynchronous task, we have to ensure this task ends to be able to create an instance of a `Component`. 
+As developer, the things you most want to test are `Components`, these `Components` can have inline Templates or external Templates, that is a little problem at moment of testing because when a `Component` has an external template, Angular template compiler must read the external files from the file system and this is an asynchronous task, we have to ensure this task ends to be able to create an instance of a `Component`. 
 
-`Async` is also a function of the Angular testing utilities, you can use it for many async tasks in testin, in this case behaves as a wrapper for `beforeEach` parameter, before our `TestBed.configureTestingModule`, let's see what is this about using the same example:
+`Async` is also a function of the Angular testing utilities, you can use it for many async tasks in testing, in this case behaves as a wrapper for `beforeEach` parameter. Let's see what is this about using the same example:
 
 ```js
 
@@ -103,13 +103,13 @@ beforeEach(async(() => {
 
 You have to admit it, Challenge #2 was so easy that even my blind grandfather could do it:older_man:
 
-**Come on guys!! let't make it more interesting. :facepunch:**
+**Come on guys!! let's make it more interesting. :facepunch:**
 
-- Have you noticed that there's an inline template in the `app.component.ts` file? Nice..! let's separate them, move the inline template to an external template:
+- Have you noticed there's an inline template in the `app.component.ts` file? Nice..! let's separate it, move the inline template to an external template:
   - Create a file...
-  - Name it correctly..
-  - Reference it in the component..
-  - **Note:** Do the same process for `joke.component.ts`, it is important to keep the file names, just change the extension. e.g: `joke.component.html`
-- Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint:*** use `async` for `configureTestingModule`
+  - Name it correctly.. `app.component.html`
+  - Reference it in the component.. ***Hint: use templateUrl***
+  - Do the same process for `joke.component.ts`. **Note: file has to named `joke.component.html` in this case**
+- Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint: use `async` for `configureTestingModule`, look example above*** 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/4#your-first-unit-test-in-angular)
