@@ -1,4 +1,4 @@
-// 1. import what you think it's necesary
+// 1. import what you think it's necessary
 import { AppComponent } from "./app.component";
 
 describe('AppComponent', ()=>{
