@@ -24,4 +24,7 @@ describe('JokeComponent', () => {
 		pipe = new CapitalizePipe();
 	});
 
+	it('should inject service into component', inject([JokeService], (jokeService: JokeService) => {
+		jokeService.getJoke().subscribe(value => console.log(value));
+	}));
 });

@@ -17,15 +17,12 @@ describe('CapitalizePipe', () => {
 So far you have **6** SUCCESS `specs` and **0** failures :smiley: :smiley:
 But we have `joke.component.ts` and `joke.service.ts` pending to test. Let's continue testing `joke.component.ts`
 
-Before start to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.ts` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
-All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to decalrations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
-
-## Challenge #6
+## Challenge #7
 
 **TIP: Follow steps in order don't miss out on anything**
-- Create a file inside app folder and named `capitalize.pipe.spec.ts`.
-- Import `CapitalizePipe` inside file you just create.
-- Create a basic structure for testing You only need to use `describe` and `spec` (`it`). **NOTE: No need to use TestBed**
+- Create a file inside app folder and name it `joke.component.spec.ts`.
+- Import `inject`, `async`, `ComponentFixture`, `TestBed` inside file you just create from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
+- Create a structure for testing having in mind youo have to use `TestBed` to `configureTestingModule` and other important things. ***Hint: ***
 - Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
 - Inside the `it` create a new instance of `CapitalizePipe`
 - Verify `Pipe` actually transform `myName` variable. ***Hint: use transform CapitalizePipe method and pass it `myName` as parameter. It should return a string first letter capitalized ***
