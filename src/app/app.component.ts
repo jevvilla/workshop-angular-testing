@@ -8,11 +8,7 @@ import { JokeService } from './joke.service';
               </div>
             `
 })
-export class AppComponent implements OnInit {
-  
-  title = 'Chuck Norris Jokes';
-  constructor(){}
-  ngOnInit(): void {
-  }
+export class AppComponent {
 
+  title = 'Chuck Norris Jokes';
 }
