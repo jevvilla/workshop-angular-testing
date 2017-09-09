@@ -74,7 +74,7 @@ In this snippet of code `inject([JokeService], (jokeService: JokeService) ` insi
 - Create a file inside joke folder and name it `joke.component.spec.ts`.
 - Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
 - Create a structure for testing having in mind using `TestBed` to `configureTestingModule`. ***Hint: take a look how you did it in app.component.spec.ts***
-- Create `jokeComponent: JokeComponent` variable, `fixture: ComponentFixture<JokeComponent>` variable, `pipe: CapitalizePipe` and an empty string variable and called `joke`;
+- Create `jokeComponent: JokeComponent` variable, `fixture: ComponentFixture<JokeComponent>` variable, `pipe: CapitalizePipe` variable and an empty string variable and called `joke`;
 - Configure appropriate the `TestBed.configureTestingModule` in the first `beforeEach`.
 - In the second `beforeEach` create `JokeComponent` using `TestBed`, create an `componentInstance` using `fixture` and create a new instance of `CapitalizePipe()`. ***Hint: take a look how you did it in app.component.spec.ts***
 - Create a `spec` *(follow the example above)*.
