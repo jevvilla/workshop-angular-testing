@@ -17,7 +17,7 @@ import { CapitalizePipe } from './capitalize.pipe';
     BrowserModule,
     HttpModule
   ],
-  providers: [ JokeService ]  ,
+  providers: [JokeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
