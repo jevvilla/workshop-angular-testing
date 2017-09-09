@@ -63,7 +63,7 @@ Hope you have learned too much so far.
 - Import `DebugElement` from '@angular/core'.
 - Create a  `DebugElement` variable called `element`.
 - Inside your second `beforeEach` assign `fixture.debugElement` to the variable just created
-- Go to `joke.component.ts` and add an `Id` to h1 element.
+- Go to `joke.component.html` and add an `Id` to h1 element.
 - Create a `spec` to evaluate initial value of h1 element is `''` *(empty)*. ***Hint: use element.nativeElement.querySelector('h1#yourId').textContent to get the h1 content***
 - Create a `spec` to verify value of h1 element **after fixture.detectChanges()**. ***Hint: After detecting changes, h1 element has to be equal to title component variable***
 
