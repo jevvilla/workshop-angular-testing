@@ -10,7 +10,6 @@ After downloading or cloning the app, you have to install all its dependencies r
 
 ## 2. Run Application
 
-once all depencecies've been installed, its time to run our application, simply run `ng s -o` and after seconds app will be served in `localhost:4200`
-Once all depencecies've been installed, it's time to run our application, simply run `ng serve -o` and after a few seconds, the app will be served in `localhost:4200`.
+Once all depencecies have been installed, it's time to run our application. Simply run `ng serve -o` and after a few seconds, the app will be served at `localhost:4200`.
 
 ### [Take first challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/1#your-first-unit-test-in-angular) 
