@@ -21,7 +21,7 @@ describe('CapitalizePipe', () => {
 });
 
 ```
-You have **6** SUCCESS `specs` and **0** failures so far  :smiley: :smiley:
+You have **5** SUCCESS `specs` and **0** failures so far  :smiley: :smiley:
 But we have `joke.component.ts` and `joke.service.ts` pending to test. Let's continue testing both at the same time.
 
 But first you have to know this:
@@ -66,13 +66,13 @@ Let's see how it looks in code: ***Hint: this example uses async and inject beca
 		});
 	})));
 ```
-In this snippet of code `inject([JokeService], (jokeService: JokeService) ` inside array we pass the name of `service` we want to `inject` `JokeService` this case, and pass `(jokeService: JokeService)` as function parameter where `jokeService` is the variable we will use inside the `spec`.
+In this snippet of code `inject([JokeService], (jokeService: JokeService) ` inside array we pass the name of `service` we want to inject (*`JokeService` this case*), and pass `(jokeService: JokeService)` as function parameter where `jokeService` is the variable we will use inside the `spec`.
 
 ## Challenge #7
 
 **TIP: Follow steps in order don't miss out on anything**
 - Create a file inside joke folder and name it `joke.component.spec.ts`.
-- Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import Http, CapitalizePipe, JokeService and JokeComponent**.
+- Import `inject`, `async`, `ComponentFixture`, `TestBed` from `'@angular/core/testing'`. **NOTE: Remember import HttpModule, CapitalizePipe, JokeService and JokeComponent**.
 - Create a structure for testing having in mind using `TestBed` to `configureTestingModule`. ***Hint: take a look how you did it in app.component.spec.ts***
 - Create `jokeComponent: JokeComponent` variable, `fixture: ComponentFixture<JokeComponent>` variable, `pipe: CapitalizePipe` variable and an empty string variable and called `joke`;
 - Configure appropriate the `TestBed.configureTestingModule` in the first `beforeEach`.
