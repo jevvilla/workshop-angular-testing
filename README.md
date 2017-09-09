@@ -28,7 +28,7 @@ describe('Hello world', () => {
 ## Challenge #1
 
 - First, in our `app` folder, create a file called `app.component.spec.ts`.
-- You only need to use `describe` and `it`. 
+- Create a basic setup or structure for testing. You only need to use `describe` and `it`. 
 - Make sure you read the example we previously used.
 - Declare a `boolean` variable called **truly** and assign `true` to it.
 - Create a `spec` to be sure the **truly** variable certainly evaluates to `true`.
