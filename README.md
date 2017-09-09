@@ -6,15 +6,16 @@ Congrats!! 🎉🎉🎉 hope you did it well, if you didn't, don't worry, do it 
 // 1. Create a basic testing structure using what you think it's necessary
 describe('AppComponent', () => {
 
-	// 2. declare a boolean variable called truly 
-	let truly = true;
+	// 2. declare a boolean variable called truly
+	const truly = true;
   
 	// 3. Evaluate truly variable, be sure its value is true
 	it('should evaluate truly variable to return true', () => {
 		expect(truly).toBe(true);
     // or expect(truly).toBeTruthy();
 	});
-})
+});
+
 ```
 
 You already have tools to solve challenge #2, but before starting it's appropriate to let you know that in Angular everything is a class (`Components`, `Services`, `Pipes`, etc), therefore you can instantiate them as long as you import the respective class before.
