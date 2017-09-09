@@ -6,12 +6,27 @@ Before starting making tests, it is a good idea to have in mind some concepts an
 
 Jasmine is an open source JavaScript framework for testing, in general, Jasmine attempts to describe tests in a human readable format so that non-technical people can understand what is being tested. Within its syntax you'll find some main methods or functions wich are essential for testing any application, those methods are:
 
-- *Suites*-`describe(string, function)` function defines what we call a ***Suite***, this function takes a title `string` as first parameter and a function as second parameter containing one or more `specs`, we can understand `describe` function as a wrapper for our tests.  
-- *Specs*-`it(string, function)` function defines individual ***Test Suite***, `it` function can contain one or more Expectations, and takes an `string` as first parameter and a function that wraps *Expectations* as second parameter.
-- *Expectations*-`expect(actual)` is what we call an Expectation, are assertions that evaluate to true or false
-- *Matchers*-`matcher(expected)` is what we call a Matcher. It does a boolean comparison with the expected value passed in vs the actual value passed to the expect function. You can find a complete list [here](https://github.com/JamieMason/Jasmine-Matchers#matchers)
+### 1.Suites
 
-Below there is a fragment of code where we show a basic testing Setup to evaluate that `expected` variable actually has `'Hello World' string` value.
+`describe("A suite", function() { });`
+
+Suite functions define what we call a ***Suite***. It takes a `string` title as the first parameter and a `function` as the second parameter. It contains one or more `specs`. We can understand `describe` function as a wrapper for our tests.
+
+### 2.Specs
+
+`it("contains spec with an expectation", function() { });`
+
+Spec functions define individual ***Test Cases***. The `it` function can contain one or more `expectations`. It takes a `string` as the first parameter and a function that wraps the `expectations` as the second parameter.
+
+### 3.Expectations and Matchers
+
+`expect(true).toBe(true);`
+
+Expectations and matches are the assertions that evaluate to either `true` or `false`. It is where the actual test reside.
+
+## Example
+
+Below there is a fragment of code where we show a basic testing setup to evaluate that the `expected` variable actually has `'Hello World'` string value.
 
 ```js
 describe('Hello world', () => {
@@ -19,8 +34,7 @@ describe('Hello world', () => {
   let expected = "Hello world";
 
   it('says Hello world', () => {
-    expect(expected)
-        .toEqual('Hello world');
+    expect(expected).toEqual('Hello world');
   });
 });
 ```
