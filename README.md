@@ -69,7 +69,7 @@ You can add more `specs` to practice what you have learned so far.
 Now you will start to test a `Pipe`. Isn't that cool?  :sunglasses:
 
 Before starting to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.html` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
-All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to decalrations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
+All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to declarations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
 
 ## Challenge #6
 
