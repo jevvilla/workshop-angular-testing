@@ -68,7 +68,7 @@ describe('AppComponent', () => {
 You can add more `specs` to practice what you have learned so far.
 Now you will start to test a `Pipe`. Isn't that cool?  :sunglasses:
 
-Before start to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.ts` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
+Before starting to test `Pipe` let's use it to understand what this `Pipe` is performing. Go to `joke.component.html` and right below h6 element add  ` <h5>{{joke | capitalize}}</h5>`.
 All `specs` are going to fail after this change, to fix them just have to ` import { CapitalizePipe } from './capitalize.pipe';`  and add `CapitalizePipe` to decalrations array in `app.component.spec.ts`, run your app and see results in browser. Do you notice what `capitalize` Pipe does?
 
 ## Challenge #6
@@ -78,8 +78,8 @@ All `specs` are going to fail after this change, to fix them just have to ` impo
 - Import `CapitalizePipe` inside file you just create.
 - Create a basic structure for testing You only need to use `describe` and `spec` (`it`). **NOTE: No need to use TestBed**
 - Declare a variable *(name it 'myName')* and makes equal to your name using random capital letters. e.g `let myName  = 'tHIs iS mY nAMe'`
-- Inside the `it` create a new instance of `CapitalizePipe`
-- Verify `Pipe` actually transform `myName` variable. ***Hint: use transform CapitalizePipe method and pass it `myName` as parameter. It should return a string first letter capitalized ***
+- Inside the `spec` (`it`) create a new instance of `CapitalizePipe`
+- Verify `Pipe` actually transform `myName` variable. ***Hint: use transform CapitalizePipe method and pass it `myName` as parameter. It should return a string first letter capitalized***
 
 
 ### [Take next challenge >>](https://github.com/jevvilla/Workshop-ATesting/tree/7#your-first-unit-test-in-angular)
