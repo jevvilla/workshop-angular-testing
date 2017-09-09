@@ -106,8 +106,7 @@ You have to admit it, Challenge #2 was so easy that even my blind grandfather co
 **Come on guys!! let's make it more interesting. :facepunch:**
 
 - Have you noticed there's an inline template in the `app.component.ts` file? Nice..! let's separate it, move the inline template to an external template:
-  - Create a file...
-  - Name it correctly.. `app.component.html`
+  - Create a file... inside app folder, and name it correctly.. `app.component.html`
   - Reference it in the component.. ***Hint: use templateUrl***
   - Do the same process for `joke.component.ts`. **Note: file has to named `joke.component.html` in this case**
 - Now that you have an external template, you have to refactor the `app.component.spec.ts` code. Make a refactor using the `TestBed` including its appropriate setup for external templates. ***Hint: use `async` for `configureTestingModule`, look example above*** 
